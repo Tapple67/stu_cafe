@@ -4,7 +4,7 @@ const categories = [
   { categoryCode: 1, categoryName: "면류&찌개&김밥" },
   { categoryCode: 2, categoryName: "덮밥류&비빔밥" },
   { categoryCode: 3, categoryName: "볶음밥&오므라이스&돈까스" },
-  { categoryCode: 4, categoryName: "☆☆신메뉴 ☆☆" },
+  { categoryCode: 4, categoryName: "☆☆신메뉴☆☆" },
 ];
 //음식
 const foods = [
