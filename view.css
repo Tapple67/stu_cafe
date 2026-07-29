@@ -1,4 +1,4 @@
-*{border: 1px solid red;}
+
 /* 기본 설정 ===============================================*/
 *{box-sizing: border-box; padding: 0px; margin: 0px;}
 a{ text-decoration: none; color: black; }
@@ -28,6 +28,19 @@ li{ list-style-type: none; }
     display: flex;
     flex-direction: column;
     text-align: center;
+    position: relative;
+}
+.당근{
+    position:absolute;
+    width: 60px;
+    right: 80px;
+    top: 10px;
+}
+.풀{
+    position: absolute;
+    width: 60px;
+    left: 80px;
+    top: 10px;
 }
 .view_sco{margin: 20px;}
 .view_img{ 
@@ -48,7 +61,7 @@ li{ list-style-type: none; }
     align-items: center;
     gap: 2px;
     color: #e3880f;
-    margin: 15px;
+    margin: 10px;
 }
 .view_추천말_icon{
     display: flex;
@@ -56,14 +69,14 @@ li{ list-style-type: none; }
     height: 40px;
     overflow: hidden;
     border-radius: 10px;
-    margin: 15px;
+    margin: 10px;
 }
 .view_추천말_icon > img{display: block;}
 
 .view_menu_name{
     font-size: 32px;
     border-bottom: 1px dashed #165017;
-    margin: 10px auto;
+    margin: 5px auto;
     padding-bottom: 5px;
     width: 640px;
     color: #165017;
@@ -87,9 +100,17 @@ li{ list-style-type: none; }
 
 /*==============================*/
 /* footer */
-.view_footer{
+.view_footer > ul{
     display: flex;
     text-align: center;
     align-items: center;
-    height: 50px;
+    width: 640px;
+    margin: 0 auto;
+    border-top: 1px dashed #165017;
+}
+.view_footer > ul >li > img{
+    display: block;
+    width: 50px;
+    margin: 5px auto;
+    align-items: center;
 }
