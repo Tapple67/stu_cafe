@@ -1,0 +1,182 @@
+@font-face {
+    font-family: 'SchoolSafetyManitto';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2511-1@1.0/HakgyoansimManitoR.woff2') format('woff2');
+    font-weight: normal;
+    font-display: swap;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'SchoolSafetyManitto';
+}
+/* header */
+
+header,
+main,
+footer{
+    width:680px;
+    margin:0 auto;
+    background:#fdfdfd;
+}
+body{
+    background:#fdfdfd;
+    color:#165017;
+}
+
+a{ text-decoration:none; color:#165017; }
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 5px;
+    border-bottom:1px solid #ddd;
+}
+
+.back{ width:20%;}
+
+.back > a{ font-size:18px; font-weight:bold; }
+
+.title{ width:60%; text-align:center; }
+
+.title > h1{ color:#165017; font-size:38px; }
+
+.logo{ width:20%; text-align:right; }
+
+.logo > img{ width:90px; }
+
+/* main */
+.score{ text-align:center; }
+
+.score > h3{
+
+    font-size: 30px;
+    margin-bottom: 8px;
+    color:#165017
+}
+.num{
+    font-size:55px;
+    color:#e3880f;
+    font-weight:bold;
+}
+.point{
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.photo{
+    margin:20px 0;
+}
+.photo > #foodImg{
+    width:360px;
+    display:block;
+    margin:auto;
+    border-radius:20px;
+}
+#foodName{
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+}
+.star{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    margin-top:5px;
+}
+.star > #starImg{
+    width:30px;
+}
+.star > #rating{
+    font-size:30px;
+}
+.info{
+    display:flex;
+    justify-content:space-between;
+    margin:15px 15px;
+}
+.infoBox{
+    width: 200px;
+    padding:10px;
+    border-radius:15px;
+    border:2px solid #e3880f;
+    text-align:center;
+}
+.infoBox > h3{ 
+    color:#165017; 
+    font-size: 28px; 
+}
+.infoBox > p{ 
+    margin-top:10px; 
+}
+.review{
+    margin:20px 15px;
+}
+.top{
+   
+    align-items:center;
+    margin-bottom:15px;
+}
+.top > h2{
+    color:#165017;
+    margin-bottom: 3px;
+}
+.top > a{
+    color:#e3880f;
+    font-weight:bold;
+
+}
+.card{
+    display:flex;
+    align-items:center;
+    padding:15px;
+    margin-bottom:15px;
+    border-radius:15px;
+    background:#fdfdfd;
+    border: 1px black solid;
+}
+.card > img{
+    width:55px;
+    margin-right:15px;
+}
+
+.text > h3{
+    margin-bottom:5px;
+}
+.reviewStar{
+    display:flex;
+    gap:2px;
+    margin-bottom:5px;
+}
+.reviewStar > img{
+    width:18px;
+}
+.card > span{
+    color:#165017;
+    font-size:14px;
+    margin-left: auto;
+}
+
+/* footer */
+footer{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    height:90px;
+    border-top:2px solid #ddd;
+}
+.menu{
+    width:33%;
+    text-align:center;
+}
+.menu > img{
+    width:40px;
+    margin:auto;
+}
+.menu > p{
+    margin-top:8px;
+    color:#165017;
+    font-size:18px;
+}

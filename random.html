@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Page Title</title>
+    <link rel='stylesheet' href='random.css'>
+</head>
+<body>
+    <header>
+
+        <div class="back">
+                <a href="start.html">← 이전화면</a>
+        </div>
+
+            <div class="title">
+                <h1>랜덤 추천</h1>
+            </div>
+
+            <div class="logo">
+                <img src="음식사진/학식당 로고.png" alt="성결대 학식당">
+            </div>
+
+    </header>
+    
+    <main>
+
+    <!-- 추천 점수 -->
+
+    <section class="score">
+
+        <h3>⭐추천 점수⭐</h3>
+        <div class="point">
+
+            <span class="num" id="score">95 </span>
+
+            <span>/ 100</span>
+
+        </div>
+
+    </section>
+
+    <!-- 음식 사진 -->
+
+    <section class="photo">
+
+        <img id="foodImg" src="음식사진/34_왕돈까스.jpg" alt="왕돈까스">
+
+    </section>
+
+    <!-- 음식 이름 -->
+
+    <section class="food">
+
+        <h2 id="foodName">왕돈까스</h2>
+
+        <div class="star">
+
+        <img id="starImg" src="학생식당_아이콘/별.png" alt="별점">
+    
+        <span id="rating">4.7 (43)</span>
+
+        </div>
+
+    </section>
+
+        <!-- 음식 정보 -->
+
+    <section class="info">
+
+        <div class="infoBox">
+
+            <h3 id="price">6,500원</h3>
+
+            <p>가격</p>
+
+        </div>
+
+        <div class="infoBox">
+
+            <h3 id="calorie">1020 kcal</h3>
+
+            <p>칼로리</p>
+
+        </div>
+
+        <div class="infoBox">
+
+            <h3 id="protein">38 g</h3>
+
+            <p>단백질</p>
+
+        </div>
+
+    </section>
+
+        <!-- 리뷰 -->
+
+    <section class="review">
+
+         <div class="top">
+
+        <h2>최근 리뷰</h2>
+
+        <a href="write.html">더보기 ></a>
+
+        </div>
+
+        <div id="reviewList">
+
+        </div>
+
+        <div class="card">
+
+            <img src="학생식당_아이콘/07_리뷰쓰기.png">
+
+            <div class="text">
+
+                <h3>학생1</h3> 
+
+                <div class="reviewStar">
+                <img src="학생식당_아이콘/별.png" alt="별">
+                <img src="학생식당_아이콘/별.png" alt="별">
+                <img src="학생식당_아이콘/별.png" alt="별">
+                <img src="학생식당_아이콘/별.png" alt="별">
+                <img src="학생식당_아이콘/별.png" alt="별">
+                </div>
+
+                <p>돈까스는 여기서만 먹음 ㅋㅋ</p>
+
+            </div>
+
+            <span>12일 전</span>
+
+        </div>
+
+        <div class="card">
+
+            <img src="학생식당_아이콘/07_리뷰쓰기.png">
+
+            <div class="text">
+
+                <h3>학생2</h3>
+
+                <div class="reviewStar">
+                <img src="학생식당_아이콘/별.png" alt="별">
+                <img src="학생식당_아이콘/별.png" alt="별">
+                <img src="학생식당_아이콘/별.png" alt="별">
+                <img src="학생식당_아이콘/별.png" alt="별">
+                </div>
+
+                <p>양도 많고 진짜 맛있어요!</p>
+
+            </div>
+
+            <span>12일 전</span>
+
+        </div>
+
+        <div class="card">
+
+            <img src="학생식당_아이콘/07_리뷰쓰기.png">
+
+            <div class="text">
+
+                <h3>학생3</h3>
+
+                <div class="reviewStar">
+                <img src="학생식당_아이콘/별.png" alt="별">
+                <img src="학생식당_아이콘/별.png" alt="별">
+                <img src="학생식당_아이콘/별.png" alt="별">
+                <img src="학생식당_아이콘/별.png" alt="별">
+                <img src="학생식당_아이콘/별.png" alt="별">
+                </div>
+
+                <p>바삭하고 소스도 최고예요.</p>
+
+            </div>
+
+            <span>12일 전</span>
+
+        </div>
+
+    </section>
+
+    </main>
+
+    <footer>
+
+        <a href="ranking.html" class="menu">
+            <img src="학생식당_아이콘/06_랭킹보기.png">
+            <p>랭킹 보기</p>
+        </a>
+
+        <a href="write.html" class="menu">
+            <img src="학생식당_아이콘/07_리뷰쓰기.png">
+            <p>리뷰쓰기</p>
+        </a>
+
+        <a href="random.html" class="menu">
+            <img src="학생식당_아이콘/랜덤추천.png">
+            <p>랜덤추천</p>
+        </a>
+
+    </footer>
+
+
+    <script src="random.js"> </script>
+    
+</body>
+</html>
