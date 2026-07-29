@@ -1,6 +1,94 @@
-header{
+
+
+.list-header > div{
+    display: flex;
+    text-align: center;
+    
+}
+.list-header > div >button{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.dropdown{
+    width: 100%;
+    border-radius: 10px;
+    position: relative;
+    border: 1px solid black;
+}
+
+.list-header-ul{
+    width: 100%;
+    list-style: none;
+    position: absolute;
+    top:10px;
+    left:-40px;
+    display: none;
+}
+
+.dropdown:hover > .list-header-ul{
+    display: block;
+
+}
+
+.list-header-ul > li > button{
+    width: 100%;
+    border-radius: 15px;
+    
+}
+
+.list-full-display{
     width: 680px;
-    border:1px solid black;
     height: 1000px;
     margin: 0 auto;
+    border: 1px solid black;
+}
+
+.list-list{
+    display: flex;
+    justify-content: space-between; 
+    margin: 15px;
+}
+
+.list-img > img{
+    width: 100%;
+    object-fit: cover;
+}
+.list-price{
+    text-align: center;
+}
+.list-img-pr, .list-content{
+    width: 30%;
+    border: 1px solid black;
+}
+
+a:visited{
+    color: black;
+    text-decoration: none;
+}
+
+a{
+    text-decoration-line: none;
+
+}
+
+.list-content{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+}
+.list-content-title{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.list-content-co1, .list-content-co3{
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+} 
+.list-content-co4{
+    color: rgb(102, 99, 99);
 }
