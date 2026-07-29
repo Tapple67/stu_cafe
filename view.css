@@ -1,0 +1,95 @@
+*{border: 1px solid red;}
+/* 기본 설정 ===============================================*/
+*{box-sizing: border-box; padding: 0px; margin: 0px;}
+a{ text-decoration: none; color: black; }
+li{ list-style-type: none; }
+*{width: 680px; font-family: 'SchoolSafetyManitto'; font-size: 22px;}
+@font-face {
+    font-family: 'SchoolSafetyManitto';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2511-1@1.0/HakgyoansimManitoR.woff2') format('woff2');
+    font-weight: normal;
+    font-display: swap;}
+/*=======================================*/
+
+/* ====  헤더 구역 */
+.view_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #165017;
+    color: #fdfdfd;
+}
+.view_header > img {width: 70px;}
+.view_header > div >a {color: #fdfdfd;}
+
+/*==========================================*/
+/* 본문 구역 */
+.view_main{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.view_sco{margin: 20px;}
+.view_img{ 
+    width: 400px; height: 200px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 30px;
+}
+
+.view_img > img{
+    display: block;
+    width: 100%; height: 100%;
+    object-fit: cover;
+}
+.view_추천말{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    color: #e3880f;
+    margin: 15px;
+}
+.view_추천말_icon{
+    display: flex;
+    width:  60px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 15px;
+}
+.view_추천말_icon > img{display: block;}
+
+.view_menu_name{
+    font-size: 32px;
+    border-bottom: 1px dashed #165017;
+    margin: 10px auto;
+    padding-bottom: 5px;
+    width: 640px;
+    color: #165017;
+    padding: 10px;
+}
+.view_menu_reson > ul{
+    display: flex;
+    width: 600px;
+    margin: 0 auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: 1px solid grey;
+    padding: 10px;
+}
+.view_menu_reson1::before{content: "😆​";}
+.view_menu_reson2::before{content: "🏆​​";}
+.view_menu_reson3::before{content: "💚";}
+.view_menu_reson1{border-right: 1px solid grey;}
+.view_menu_reson2{border-right: 1px solid grey;}
+
+/*==============================*/
+/* footer */
+.view_footer{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    height: 50px;
+}
