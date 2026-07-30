@@ -1,9 +1,14 @@
-.list-header > div{
+.write-header > div{
     display: flex;
     text-align: center;
     
 }
-.list-header > div >button{
+.write-header > div > a {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.write-header > div > a > button {
     width: 100%;
     border-radius: 10px;
 }
@@ -15,7 +20,7 @@
     border: 1px solid black;
 }
 
-.list-header-ul{
+.write-header-ul{
     width: 100%;
     list-style: none;
     position: absolute;
@@ -24,38 +29,49 @@
     display: none;
 }
 
-.dropdown:hover > .list-header-ul{
+.dropdown:hover > .write-header-ul{
     display: block;
 
 }
 
-.list-header-ul > li > button{
+.write-header-ul > li > button{
     width: 100%;
     border-radius: 15px;
     
 }
 
-.list-full-display{
+.write-full-display{
     width: 680px;
     height: 1000px;
     margin: 0 auto;
     border: 1px solid black;
 }
 
-.list-list{
+.write-list{
     display: flex;
     justify-content: space-between; 
     margin: 15px;
+    flex-wrap: wrap;
+    row-gap:15px;
 }
 
-.list-img > img{
+
+
+
+.write-img > a{
     width: 100%;
     object-fit: cover;
 }
-.list-price{
+
+.write-img > a >img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.write-price{
     text-align: center;
 }
-.list-img-pr, .list-content{
+.write-img-pr, .write-content{
     width: 30%;
     border: 1px solid black;
 }
@@ -70,23 +86,23 @@ a{
 
 }
 
-.list-content{
+.write-content{
     width: 70%;
     display: flex;
     flex-direction: column;
     justify-content:space-around;
 }
-.list-content-title{
+.write-content-title{
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
 }
 
-.list-content-co1, .list-content-co3{
+.write-content-co1, .write-content-co3{
     display: flex;
     justify-content: space-between;
     width: 70%;
 } 
-.list-content-co4{
+.write-content-co4{
     color: rgb(102, 99, 99);
 }
