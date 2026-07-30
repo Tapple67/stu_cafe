@@ -223,9 +223,18 @@ function list(){
 
     list.innerHTML = html;
 
-
-    
 }
+
+    const params = new URLSearchParams(location.search);
+    const categoryCode = params.get("categoryCode");
+
+    const links = document.querySelectorAll(".list-header > div > a");
+
+    for (let i = 0; i < links.length; i++) {
+    if (links[i].dataset.code == categoryCode) {
+        links[i].classList.add("active");
+    }
+    }
 
 
         function ordersell(){

@@ -31,7 +31,7 @@ function view_print(){
             // url에 foodcode 넘겨 주기
             document.querySelector(".view_write").innerHTML =`<img src="학생식당_아이콘/07_리뷰쓰기.png" />
                                                                 <a href="write.html?foodCode=${obj.foodCode}">리뷰쓰기</a>`
-            document.querySelector('.view_img > img').src = "음식사진/" + obj.img
+            document.querySelector('.view_img > img').src = "음식사진/" + obj.image
                              
                                                                 
             // 별점수에 따른 멘트 설정
@@ -71,7 +71,7 @@ function getScore(foodCode){
     // 판매량 점수 (30점)
     let salesScore = (food.sales / maxSales) * 30;
     // 별점 점수 (30점)
-    let ratingScore = (avgRating(foodCode)/5)  *30;
+    let ratingScore = (avgrating(foodCode)/5)  *30;
     // 즐겨찾기 (현재는 모두 만점)
     let favoriteScore = 30;
     // 신메뉴 점수 (10%)

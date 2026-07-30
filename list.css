@@ -5,30 +5,59 @@
     text-align: center;
     
 }
-.list-header > div > a {
+.list-header-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #165017;
+    color: #fdfdfd;
+    margin-bottom: 10px;
+    
+}
+.list-header-top > a{text-decoration: none; color: white;}
+.list-header-top > img {width: 70px;}
+.list-menu-header{text-align: center;}
+
+
+.list-category > a {
     width: 100%;
     border-radius: 10px;
+    text-decoration: none;
+    color: black;
 }
 
-.list-header > div > a >button{
+.list-category > a >button{
     width: 100%;
     border-radius: 10px;
+    height: 50px;
 }
 .dropdown{
     width: 100%;
     border-radius: 10px;
     position: relative;
     border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size:x-large;
 }
 
 .list-header-ul{
     width: 100%;
     list-style: none;
     position: absolute;
-    top:10px;
+    top:26px;
     left:-40px;
     display: none;
 }
+
+.list-header-ul > li > button:hover{
+    background-color: #e3880f;
+}
+.dropdown:hover{
+    background-color:#165017;
+}
+
 
 .dropdown:hover > .list-header-ul{
     display: block;
@@ -38,6 +67,12 @@
 .list-header-ul > li > button{
     width: 100%;
     border-radius: 15px;
+    height: 50px;
+
+    
+}
+.list-header-ul > li {
+   height: 50px;
     
 }
 
@@ -45,14 +80,22 @@
     width: 680px;
     margin: 0 auto;
     border: 1px solid black;
+    
+
 }
 
 
 .list-a{
     display: flex;
+    flex:1;
     flex-direction: column;
-    height: 1000px;
-    overflow-y:scroll;
+    overflow-y:auto;
+    height: 800px;
+    
+}
+
+.list-a > a:hover .list-list{
+    box-shadow:1px 3px 5px 5px  gray;
 }
 .list-list{
     display: flex;
@@ -73,12 +116,20 @@
 }
 
 a:visited{
-    color: black;
     text-decoration: none;
 }
 
-a{
+.list-main a{
     text-decoration-line: none;
+    color: black;
+}
+.list-header > div > a{
+    
+    height: 50px;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
 }
 
@@ -87,6 +138,7 @@ a{
     display: flex;
     flex-direction: column;
     justify-content:space-around;
+    padding: 10px;
 }
 .list-content-title{
     display: flex;
@@ -101,4 +153,44 @@ a{
 } 
 .list-content-co4{
     color: rgb(102, 99, 99);
+}
+
+
+/*a태그 누르면 색변환*/
+
+.list-header a.active {
+  background-color: #165017;
+  color: white;
+}
+
+
+
+
+
+/*footer*/
+.list-footer{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    height:100px;
+    border-top:2px solid #ddd;
+    position: sticky;
+    bottom: 0px;
+    background-color: white;
+}
+.menu{
+    width:33%;
+    text-align:center;
+}
+.menu > img{
+    width:40px;
+    margin:auto;
+}
+.menu > p{
+    margin-top:8px;
+    color:#165017;
+    font-size:18px;
+}
+.list-footer > a{
+    text-decoration: none;
 }
