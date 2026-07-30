@@ -33,7 +33,7 @@ const foods = [
   { foodCode: 39, foodName: "고추가라아게카레동", sales: 286, image: "39_고추가라아게카레동.jpg", categoryCode: 3 },
 
   { foodCode: 40, foodName: "크림닭강정", sales: 123, image: "40_크림닭강정.jpg", categoryCode: 4 },
-  { foodCode: 41, foodName: "우삼겹매콤크림파스타", sales: 381, image: "41_우삼겹매콤크림파스타_.jpg", categoryCode: 4 },
+  { foodCode: 41, foodName: "우삼겹매콤크림파스타", sales: 381, image: "41_우삼겹매콤크림파스타.jpg", categoryCode: 4 },
   { foodCode: 42, foodName: "쫀득바삭치즈볼", sales: 167, image: "42_쫀득바삭치즈볼.jpg", categoryCode: 4 },
 ];
 
