@@ -4,7 +4,7 @@ const categories = [
   { categoryCode: 1, categoryName: "면류&찌개&김밥" },
   { categoryCode: 2, categoryName: "덮밥류&비빔밥" },
   { categoryCode: 3, categoryName: "볶음밥&오므라이스&돈까스" },
-  { categoryCode: 4, categoryName: "☆☆신메뉴☆☆" },
+  { categoryCode: 4, categoryName: "☆☆신메뉴☆☆" }
 ];
 //음식
 const foods = [
@@ -33,10 +33,9 @@ const foods = [
   { foodCode: 39, foodName: "고추가라아게카레동", sales: 286, image: "39_고추가라아게카레동.jpg", categoryCode: 3 },
 
   { foodCode: 40, foodName: "크림닭강정", sales: 123, image: "40_크림닭강정.jpg", categoryCode: 4 },
-  { foodCode: 41, foodName: "우삼겹매콤크림파스타", sales: 381, image: "41_우삼겹매콤크림파스타_.jpg", categoryCode: 4 },
+  { foodCode: 41, foodName: "우삼겹매콤크림파스타", sales: 381, image: "41_우삼겹매콤크림파스타.jpg", categoryCode: 4 },
   { foodCode: 42, foodName: "쫀득바삭치즈볼", sales: 167, image: "42_쫀득바삭치즈볼.jpg", categoryCode: 4 },
-];
-
+]; 
 //리뷰
 const reviews = [
   { reviewCode: 1, content: "국물이 진하고 맛있어요.", rating: 5, foodCode: 11 },
@@ -118,3 +117,17 @@ const foodDetails = [
   { foodCode: 41, price: 6900, calories: 980, protein: 34, fat: 48, carbs: 96 },
   { foodCode: 42, price: 3000, calories: 270, protein: 6, fat: 15, carbs: 28 },
 ];
+
+
+function writealldata () {
+
+  // 로컬 스토리지에 데이저 푸쉬
+  localStorage.setItem('categories', JSON.stringify( categories ))
+  localStorage.setItem('foods', JSON.stringify( foods ))
+  localStorage.setItem('reviews', JSON.stringify( reviews ))
+  localStorage.setItem('foodDetails', JSON.stringify( foodDetails ))
+
+  location.href = "start.html"
+}
+
+// categories  foods  reviews  foodDetails
