@@ -1,5 +1,6 @@
 // 카테고리
 
+
 const categories = [
   { categoryCode: 1, categoryName: "면류&찌개&김밥" },
   { categoryCode: 2, categoryName: "덮밥류&비빔밥" },
@@ -120,22 +121,215 @@ const foodDetails = [
 ];
 
 localStorage.setItem('categories',JSON.stringify(categories))
+localStorage.setItem('foods',JSON.stringify(foods))
+localStorage.setItem('reviews',JSON.stringify(reviews))
+localStorage.setItem('foodDetails',JSON.stringify(foodDetails))
 
 
+list()
 function list(){
     const categorycode = new URLSearchParams(location.search);
-
-    let catecode = categorycode.getItem('categoryCode');
     // 카테고리코드 가져온상태
 
+    let catecode = categorycode.get('categoryCode');
+   
+    //list html 부분 가져오기
+    const list = document.querySelector('.list-a');
+    let html ='';
+
+    //카테고리가져오고
     let categories= localStorage.getItem('categories');
     if(categories==null){categories=[]}
     else{categories = JSON.parse(categories)}
 
-    //카테고리가져오고
+    //음식
+    let foods= localStorage.getItem('foods');
+    if(foods==null){foods=[]}
+    else{foods = JSON.parse(foods)}
+
+    //리뷰
+    let reviews= localStorage.getItem('reviews');
+    if(reviews==null){reviews=[]}
+    else{reviews = JSON.parse(reviews)}
+
+    //세부사항
+    let foodDetails= localStorage.getItem('foodDetails');
+    if(foodDetails==null){foodDetails=[]}
+    else{foodDetails = JSON.parse(foodDetails)}
+
+    for(let i=0; i<foods.length; i++){
+        if(catecode == foods[i].categoryCode){   // url page에 코드와 음식카테고리코드가 같은 것중에
+            if(foods[i].foodCode == foodDetails[i].foodCode){
+                let avgrating = 0;
+                let reivewcount = 0;
+                for(let j = 0; j<reviews.length; j++){
+                    if(foods[i].foodCode == reviews[j].foodCode){
+                        avgrating += Number(reviews[j].rating)
+                        reivewcount++;
+                    }
+                }
+                avgrating =  avgrating / reivewcount
+                
+                let reviewHTML=''
+
+                for(let k = 0; k<reviews.length; k++){
+                    if(foods[i].foodCode==reviews[k].foodCode){
+                        reviewHTML += `<div>${reviews[k].content}</div>`;
+                    }
+                }
+
+                html += 
+                `
+                <a href="view.html?foodCode=${foods[i].foodCode}">
+                    <div class="list-list">
+                        <div class="list-img-pr">
+                            <div class="list-img">
+                                <img src="/음식사진/${foods[i].image}" alt="음식사진">
+                            </div>
+                            <div class="list-price">${foodDetails[i].price.toLocaleString()}원</div>
+                        </div>
+                        
+                        <div class="list-content">
+                            <div class="list-content-title">
+                                <div>${foods[i].foodName}</div>
+                                <div>⭐${avgrating}</div>
+                            </div>
+                            <div class="list-content-co1">
+                                <div>탄수화물: ${foodDetails[i].carbs}</div>
+                                <div>kcal: ${foodDetails[i].calories}kcal</div>
+                            </div>
+                            <div class="list-content-co2">
+                                <div>단백질:${foodDetails[i].protein}</div>
+                            </div>
+                            <div class="list-content-co3">
+                                <div>지방:${foodDetails[i].fat}</div>
+                            </div>
+
+                            <div class="list-content-co4">
+                                <div>${reviewHTML}</div>
+                            </div>
+
+                        </div>
+                    </div> 
+                </a> `
+                
+            }
+                
+            
+        }
+
+        
+    }
+
+    list.innerHTML = html;
 
 
-
-
-
+    
 }
+
+
+        function ordersell(){
+            const categorycode = new URLSearchParams(location.search);
+            // 카테고리코드 가져온상태
+
+            let catecode = categorycode.get('categoryCode');
+        
+            //list html 부분 가져오기
+            const list = document.querySelector('.list-a');
+            let html ='';
+
+            //카테고리가져오고
+            let categories= localStorage.getItem('categories');
+            if(categories==null){categories=[]}
+            else{categories = JSON.parse(categories)}
+
+            //음식
+            let foods= localStorage.getItem('foods');
+            if(foods==null){foods=[]}
+            else{foods = JSON.parse(foods)}
+
+            //리뷰
+            let reviews= localStorage.getItem('reviews');
+            if(reviews==null){reviews=[]}
+            else{reviews = JSON.parse(reviews)}
+
+            //세부사항
+            let foodDetails= localStorage.getItem('foodDetails');
+            if(foodDetails==null){foodDetails=[]}
+            else{foodDetails = JSON.parse(foodDetails)}
+
+            copyfoods.sort(function(a, b) {
+                return b.sales - a.sales;
+            });
+
+        for (let i = 0; i < copyfoods.length; i++) {
+        if (catecode == copyfoods[i].categoryCode) {
+            let detail = foodDetails.find(function(item) {
+            return item.foodCode == copyfoods[i].foodCode;
+            });
+
+            let avgrating = 0;
+            let reviewcount = 0;
+
+            for (let j = 0; j < reviews.length; j++) {
+            if (copyfoods[i].foodCode == reviews[j].foodCode) {
+                avgrating += Number(reviews[j].rating);
+                reviewcount++;
+            }
+            }
+
+            if (reviewcount > 0) {
+            avgrating = avgrating / reviewcount;
+            } else {
+            avgrating = 0;
+            }
+
+            let reviewHTML = "";
+
+            for (let k = 0; k < reviews.length; k++) {
+            if (copyfoods[i].foodCode == reviews[k].foodCode) {
+                reviewHTML += `<div>${reviews[k].content}</div>`;
+            }
+            }
+
+            html += `
+            <a href="view.html">
+                <div class="list-list">
+                <div class="list-img-pr">
+                    <div class="list-img">
+                    <img src="/음식사진/${copyfoods[i].image}" alt="음식사진">
+                    </div>
+                    <div class="list-price">${detail.price.toLocaleString()}원</div>
+                </div>
+
+                <div class="list-content">
+                    <div class="list-content-title">
+                    <div>${copyfoods[i].foodName}</div>
+                    <div>⭐${avgrating}</div>
+                    </div>
+
+                    <div class="list-content-co1">
+                    <div>탄수화물: ${detail.carbs}</div>
+                    <div>kcal: ${detail.calories}kcal</div>
+                    </div>
+
+                    <div class="list-content-co2">
+                    <div>단백질: ${detail.protein}</div>
+                    </div>
+
+                    <div class="list-content-co3">
+                    <div>지방: ${detail.fat}</div>
+                    </div>
+
+                    <div class="list-content-co4">
+                    ${reviewHTML}
+                    </div>
+                </div>
+                </div>
+            </a>
+            `;
+        }
+        }
+    }
+
+     
