@@ -1,4 +1,5 @@
-*{border: 1px  solid black;}
+
+
 @font-face {
     font-family: 'SchoolSafetyManitto';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2511-1@1.0/HakgyoansimManitoR.woff2') format('woff2');
@@ -46,9 +47,9 @@ body {
 }
 
 
-#start-mainimg1,#start-mainimg2,#start-mainimg3{
-    width: 210px;
-    height: 210px;
+#start-mainimg1,#start-mainimg2,#start-mainimg3,#start-mainimg4{
+    width: 150px;
+    height: 150px;
 }
 
 
@@ -67,16 +68,36 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    flex: 1;
 }
 
 
 #start-footer{
     display: flex;
-    justify-content: space-evenly;
+    flex: 1
+    
 }
 
 
 #start-footimg1, #start-footimg2, #start-footimg3{
     width: 100px;
     height: 100px;
+    
+}
+
+
+#start-footer .footer-menu:not(:last-child) {
+    border-right: 1px solid black;
+}
+
+/* ========== a태그들 설정============ */
+a,
+a:visited {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
