@@ -55,7 +55,7 @@ function getScore(foodCode){
     // 즐겨찾기 (현재는 모두 만점)
     let favoriteScore = 30;
     // 신메뉴 점수 (10%)
-    let newMenuScore =  0;
+    let newMenuScore =  0;  
 
     // 총점
     let totalScore = salesScore + ratingScore + favoriteScore + newMenuScore;

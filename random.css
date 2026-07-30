@@ -141,23 +141,6 @@ header{
     margin-right:15px;
 }
 
-.text > h3{
-    margin-bottom:5px;
-}
-.reviewStar{
-    display:flex;
-    gap:2px;
-    margin-bottom:5px;
-}
-.reviewStar > img{
-    width:18px;
-}
-.card > span{
-    color:#165017;
-    font-size:14px;
-    margin-left: auto;
-}
-
 /* footer */
 footer{
     display:flex;
