@@ -51,10 +51,8 @@ function view_print(){
             if(rank <= top10Count){
                 document.querySelector(".view_menu_reson2").innerHTML = "판매량 상위 메뉴예요!"
             }else{document.querySelector(".view_menu_reson2").innerHTML = "맛있어 보일 겁니다."}
-
-
         }
-    
+
     }
 
 
