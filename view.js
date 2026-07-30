@@ -27,11 +27,11 @@ function view_print(){
         let obj = foods[i] // 배열에서 인데스 순서별 객체
         if(obj.foodCode == foodcode){
             document.querySelector(".view_menu_name").innerHTML = obj.foodName
-            document.querySelector(".view_sco").innerHTML = "추천 점수를 보여드릴게요!" +getScore(foodcode)// 추천도 점수 계산하는 식 
+            document.querySelector(".view_sco").innerHTML = `추천 점수를 보여드릴게요! + ${getScore(foodcode)}`// 추천도 점수 계산하는 식 
             // url에 foodcode 넘겨 주기
             document.querySelector(".view_write").innerHTML =`<img src="학생식당_아이콘/07_리뷰쓰기.png" />
                                                                 <a href="write.html?foodCode=${obj.foodCode}">리뷰쓰기</a>`
-            document.querySelector('.view_img > img').src = "음식사진/" + obj.image
+            document.querySelector('.view_img').innerHTML = `<img src="음식사진/${obj.image}" />`
                              
                                                                 
             // 별점수에 따른 멘트 설정
