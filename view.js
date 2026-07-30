@@ -28,7 +28,12 @@ function view_print(){
         if(obj.foodCode == foodcode){
             document.querySelector(".view_menu_name").innerHTML = obj.foodName
             document.querySelector(".view_sco").innerHTML = "추천 점수를 보여드릴게요!" +getScore(foodcode)// 추천도 점수 계산하는 식 
-            
+            // url에 foodcode 넘겨 주기
+            document.querySelector(".view_write").innerHTML =`<img src="학생식당_아이콘/07_리뷰쓰기.png" />
+                                                                <a href="write.html?foodCode=${obj.foodCode}">리뷰쓰기</a>`
+            document.querySelector('.view_img > img').src = "음식사진/" + obj.img
+                             
+                                                                
             // 별점수에 따른 멘트 설정
             if(avgrating(foodcode) >= 3.2){
                 document.querySelector(".view_menu_reson1").innerHTML = "별점수가 높아요!" + avgrating(foodcode)
@@ -46,6 +51,8 @@ function view_print(){
             if(rank <= top10Count){
                 document.querySelector(".view_menu_reson2").innerHTML = "판매량 상위 메뉴예요!"
             }else{document.querySelector(".view_menu_reson2").innerHTML = "맛있어 보일 겁니다."}
+
+
         }
     
     }
