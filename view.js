@@ -28,7 +28,26 @@ function view_print(){
         if(obj.foodCode == foodcode){
             document.querySelector(".view_menu_name").innerHTML = obj.foodName
             document.querySelector(".view_sco").innerHTML = "추천 점수를 보여드릴게요!" +getScore(foodcode)// 추천도 점수 계산하는 식 
+            
+            // 별점수에 따른 멘트 설정
+            if(avgrating(foodcode) >= 3.2){
+                document.querySelector(".view_menu_reson1").innerHTML = "별점수가 높아요!" + avgrating(foodcode)
+            }else{document.querySelector(".view_menu_reson1").innerHTML = "별점수가 낮네요~" }
+
+            // 판매량이 높은 메뉴
+            // 판매량 높은 순으로 정렬 ** 이 부분은 AI의 힘을 빌렸습니다
+            let sortedFoods = [...foods].sort((a, b) => b.sales - a.sales);
+            // 상위 10% 기준 개수
+            let top10Count = Math.ceil(sortedFoods.length * 0.1);
+            // 현재 음식의 순위 찾기
+            let rank = sortedFoods.findIndex(f => f.foodCode == foodCode) + 1;
+            
+            // 상위 10% 여부
+            if(rank <= top10Count){
+                document.querySelector(".view_menu_reson2").innerHTML = "판매량 상위 메뉴예요!"
+            }else{document.querySelector(".view_menu_reson2").innerHTML = "맛있어 보일 겁니다."}
         }
+    
     }
 
 
@@ -51,7 +70,7 @@ function getScore(foodCode){
     // 판매량 점수 (30점)
     let salesScore = (food.sales / maxSales) * 30;
     // 별점 점수 (30점)
-    let ratingScore = (avgRating(foods.foodCode)/5)  *30;
+    let ratingScore = (avgRating(foodCode)/5)  *30;
     // 즐겨찾기 (현재는 모두 만점)
     let favoriteScore = 30;
     // 신메뉴 점수 (10%)
@@ -59,12 +78,12 @@ function getScore(foodCode){
 
     // 총점
     let totalScore = salesScore + ratingScore + favoriteScore + newMenuScore;
-    return totalScore;
+    return totalScore.toFixed(1);
 }
 
 //평균 별점 계산
 function avgrating(foodCode){
-    let reviews = JSON.parse(location.search('reviews'))
+    let reviews = JSON.parse(localStorage.getItem('reviews'))
     if(reviews==null){reviews=[]}   // 스토리지에서 reviews 호출
 
     let count = 0
@@ -75,6 +94,7 @@ function avgrating(foodCode){
             ratingSum += reviews[i].rating
         }
     }
-    let avg = ratingSum / count // 평균 별점을 구하고 변수에 저장
+    let avg = ratingSum / count
+    if(count == 0){return 0;} // 평균 별점을 구하고 변수에 저장
     return avg; // 평균 별점 값 반환
 }
