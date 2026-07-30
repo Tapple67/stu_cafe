@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>리뷰 작성</title>
+    <link rel="stylesheet" href="review.css">
+</head>
+
+<body>
+
+    <div class="review-wrap">
+
+        <div class="review-header">
+            <button type="button" onclick="history.back()">←</button>
+            <h1>리뷰 작성</h1>
+        </div>
+
+        <!-- 선택한 음식 정보가 들어가는 곳 -->
+        <div class="review-food-info">
+            <img class="review-food-image" src="음식사진\36_치즈고구마돈까스.jpg" alt="음식사진">
+
+            <div class="food-content">
+                <h2 class="review-food-name">고치돈</h2>
+                <p class="review-food-price">5800원</p>
+            </div>
+        </div>
+
+        <div class="review-form">
+
+            <div class="review-form-title">
+                <h3>음식은 어떠셨나요?</h3>
+                <p>별점을 선택해주세요.</p>
+            </div>
+
+            <div class="review-star-box">
+                <button type="review-button" onclick="star = selectStar(1)">☆</button>
+                <button type="review-button" onclick="star = selectStar(2)">☆</button>
+                <button type="review-button" onclick="star = selectStar(3)">☆</button>
+                <button type="review-button" onclick="star = selectStar(4)">☆</button>
+                <button type="review-button" onclick="star = selectStar(5)">☆</button>
+            </div>
+
+            <div class="review-input">
+                <label for="reviewContent">리뷰 내용</label>
+
+                <textarea
+                    id="reviewContent"
+                    maxlength="300"
+                    placeholder="음식에 대한 솔직한 리뷰를 작성해주세요."
+                ></textarea>
+
+                <div class="review-text-count">
+                    <span id="count">0</span>/300
+                </div>
+            </div>
+
+            <button id="review-upload" type="button" onclick="reviewupload()">
+                리뷰 등록
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="review.js"></script>
+</body>
+</html>

@@ -7,37 +7,34 @@
     <link href="write.css" rel="stylesheet">
 </head>
 <body>
-    <h1> 리뷰쓰기 </h1>
+    
 
-    <div class="list-full-display">
-        <h1> 리뷰쓰기 </h1>
-        <div class="list-header">
+    <div class="write-full-display">
+        
+        <a href="start.html"><button type="button">←</button></a>
+        <div class="write-header1">
+            
+            <h1>리뷰 작성</h1>
+        </div>
+
+        <div class="write-header">
             <div>
-                <button>면류</button>
-                <button>덮밥류</button>
-                <button>볶음밥류</button>
-                <button>신메뉴</button>
-                <div class="dropdown">=
-                    <ul class="list-header-ul">
-                        <li><button>판매량순</button></li>
-                        <li><button>별점순</button></li>
-                        <li><button>가격순</button></li>
-                        <li><button>리뷰랑순</button></li>
-                    </ul>
-                </div>
-                
+                <a href="write.html?categoryCode=1"><button onclick="writepage()">면류</button></a>
+                <a href="write.html?categoryCode=2"><button>덮밥류</button onclick="writepage()"></a>
+                <a href="write.html?categoryCode=3"><button>볶음밥류</button onclick="writepage()"></a>
+                <a href="write.html?categoryCode=4"><button>신메뉴</button onclick="writepage()"></a>
             </div>
 
         </div>
 
-        <div class="list-main">
+        <div class="write-main">
             <a href="write.html?categorycode=1"> 
-                <div class="list-list">
-                    <div class="list-img-pr">
-                        <div class="list-img">
+                <div class="write-list">
+                    <div class="write-img-pr">
+                        <div class="write-img">
                             <img src="/음식사진/36_치즈고구마돈까스.jpg" alt="음식사진">
                         </div>
-                        <div class="list-price">5800원</div>
+                        <div class="write-price">5800원</div>
                     </div>
                     
                     
@@ -46,12 +43,12 @@
             </a>
         </div>
 
-        <div class="list-footer">
+        <div class="write-footer">
 
         </div>
 
     </div>
-
+    
     <script src="write.js"></script>
 </body>
 </html>
