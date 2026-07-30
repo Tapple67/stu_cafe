@@ -52,11 +52,7 @@ function view_print(){
                 document.querySelector(".view_menu_reson2").innerHTML = "판매량 상위 메뉴예요!"
             }else{document.querySelector(".view_menu_reson2").innerHTML = "맛있어 보일 겁니다."}
         }
-
     }
-
-
-
 }
 // 추천도 점수 계산하는 식
 function getScore(foodCode){
