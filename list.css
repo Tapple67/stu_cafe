@@ -5,11 +5,15 @@
     text-align: center;
     
 }
-.list-header > div >button{
+.list-header > div > a {
     width: 100%;
     border-radius: 10px;
 }
 
+.list-header > div > a >button{
+    width: 100%;
+    border-radius: 10px;
+}
 .dropdown{
     width: 100%;
     border-radius: 10px;
@@ -39,14 +43,20 @@
 
 .list-full-display{
     width: 680px;
-    height: 1000px;
     margin: 0 auto;
     border: 1px solid black;
 }
 
+
+.list-a{
+    display: flex;
+    flex-direction: column;
+    height: 1000px;
+    overflow-y:scroll;
+}
 .list-list{
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
     margin: 15px;
 }
 
