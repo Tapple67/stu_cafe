@@ -40,7 +40,7 @@ body {
     font-size: 25px;
 }
 
-.food-info {
+.review-food-info {
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -49,18 +49,18 @@ body {
     border-radius: 12px;
 }
 
-.food-image {
+.review-food-image {
     width: 160px;
     height: 140px;
     border-radius: 10px;
     object-fit: cover;
 }
 
-.food-content h2 {
+.review-food-content h2 {
     margin: 0 0 15px;
 }
 
-.food-price {
+.review-food-price {
     margin: 0;
     font-size: 18px;
     font-weight: bold;
@@ -73,26 +73,26 @@ body {
     border-radius: 12px;
 }
 
-.form-title {
+.review-form-title {
     text-align: center;
 }
 
-.form-title h3 {
+.review-form-title h3 {
     margin-bottom: 8px;
     font-size: 22px;
 }
 
-.form-title p {
+.review-form-title p {
     color: #777;
 }
 
-.star-box {
+.review-star-box {
     display: flex;
     justify-content: center;
     margin: 20px 0 30px;
 }
 
-.star-box button {
+.review-star-box review-button {
     padding: 3px;
     border: none;
     background-color: white;
@@ -100,7 +100,7 @@ body {
     cursor: pointer;
 }
 
-.star-box button.selected {
+.review-star-box button.selected {
     color: orange;
 }
 
@@ -120,13 +120,13 @@ body {
     font-size: 15px;
 }
 
-.text-count {
+.review-text-count {
     margin-top: 5px;
     text-align: right;
     color: #777;
 }
 
-.submit-btn {
+#review-upload {
     width: 100%;
     height: 55px;
     margin-top: 25px;

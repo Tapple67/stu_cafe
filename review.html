@@ -17,28 +17,28 @@
         </div>
 
         <!-- 선택한 음식 정보가 들어가는 곳 -->
-        <div class="food-info">
-            <img class="food-image" src="음식사진\36_치즈고구마돈까스.jpg" alt="음식사진">
+        <div class="review-food-info">
+            <img class="review-food-image" src="음식사진\36_치즈고구마돈까스.jpg" alt="음식사진">
 
             <div class="food-content">
-                <h2 class="food-name">고치돈</h2>
-                <p class="food-price">5800원</p>
+                <h2 class="review-food-name">고치돈</h2>
+                <p class="review-food-price">5800원</p>
             </div>
         </div>
 
         <div class="review-form">
 
-            <div class="form-title">
+            <div class="review-form-title">
                 <h3>음식은 어떠셨나요?</h3>
                 <p>별점을 선택해주세요.</p>
             </div>
 
-            <div class="star-box">
-                <button type="button" onclick="selectStar(1)">☆</button>
-                <button type="button" onclick="selectStar(2)">☆</button>
-                <button type="button" onclick="selectStar(3)">☆</button>
-                <button type="button" onclick="selectStar(4)">☆</button>
-                <button type="button" onclick="selectStar(5)">☆</button>
+            <div class="review-star-box">
+                <button type="review-button" onclick="star = selectStar(1)">☆</button>
+                <button type="review-button" onclick="star = selectStar(2)">☆</button>
+                <button type="review-button" onclick="star = selectStar(3)">☆</button>
+                <button type="review-button" onclick="star = selectStar(4)">☆</button>
+                <button type="review-button" onclick="star = selectStar(5)">☆</button>
             </div>
 
             <div class="review-input">
@@ -50,12 +50,12 @@
                     placeholder="음식에 대한 솔직한 리뷰를 작성해주세요."
                 ></textarea>
 
-                <div class="text-count">
+                <div class="review-text-count">
                     <span id="count">0</span>/300
                 </div>
             </div>
 
-            <button class="submit-btn" type="button" onclick="reviewWrite()">
+            <button id="review-upload" type="button" onclick="reviewupload()">
                 리뷰 등록
             </button>
 
