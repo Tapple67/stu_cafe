@@ -9,12 +9,21 @@
 <body>
     <div class="list-full-display">
         <div class="list-header">
-            <div>
-                <a href="list.html?categoryCode=1"><button>면류</button> </a>
-                <a href="list.html?categoryCode=2"><button>덮밥류</button></a>
-                <a href="list.html?categoryCode=3"><button>볶음밥류</button></a>
-                <a href="list.html?categoryCode=4"><button>신메뉴</button></a>
-                <div class="dropdown">=
+            <div class="list-header-top">
+                <a href="start.html">← 이전화면</a>
+
+                <div class="list-menu-header">
+                    메뉴
+                </div>
+            
+                <img src="음식사진/학식당 로고.png" />
+            </div>
+            <div class="list-category">
+                <a href="list.html?categoryCode=1" data-code="1">면류 </a>
+                <a href="list.html?categoryCode=2" data-code="2">덮밥류</a>
+                <a href="list.html?categoryCode=3" data-code="3">볶음밥류</a>
+                <a href="list.html?categoryCode=4" data-code="4">신메뉴</a>
+                <div class="dropdown">≡
                     <ul class="list-header-ul">
                         <li><button onclick="ordersell()">판매량순</button></li>
                         <li><button onclick="">별점순</button></li>
@@ -70,7 +79,20 @@
         </div>
 
         <div class="list-footer">
+                <a href="view.html" class="menu">
+                <img src="학생식당_아이콘/06_랭킹보기.png">
+                <p>메뉴 목록</p>
+            </a>
 
+            <a href="review.html" class="menu" id="writeBtn">
+            <img src="학생식당_아이콘/07_리뷰쓰기.png">
+            <p>리뷰쓰기</p>
+            </a>
+
+            <a href="random.html" class="menu">
+                <img src="학생식당_아이콘/랜덤추천.png">
+                <p>랜덤추천</p>
+            </a>
         </div>
 
     </div>

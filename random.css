@@ -119,11 +119,11 @@ header{
     align-items:center;
     margin-bottom:15px;
 }
-.top > h2{
+.review > h2{
     color:#165017;
     margin-bottom: 3px;
 }
-.top > a{
+.review > a{
     color:#e3880f;
     font-weight:bold;
 }
