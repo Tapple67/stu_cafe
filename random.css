@@ -1,3 +1,4 @@
+/* =============== 기본 설정 =============== */
 @font-face {
     font-family: 'SchoolSafetyManitto';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2511-1@1.0/HakgyoansimManitoR.woff2') format('woff2');
@@ -9,48 +10,59 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'SchoolSafetyManitto';
-}
-/* header */
-
-header,
-main,
-footer{
-    width:680px;
-    margin:0 auto;
-    background:#fdfdfd;
+    font-family:'SchoolSafetyManitto'
 }
 body{
-    background:#fdfdfd;
     color:#165017;
 }
+.web{
+    width:680px;
+    margin:20px auto;
+    background:#fdfdfd;
+    border:1px solid gray;
+}
+header, main, footer{ width:100% }
+a{
+    text-decoration:none;
+    color:#165017;
+}
+/* =============== 기본 설정 =============== */
 
-a{ text-decoration:none; color:#165017; }
+/* header */
 header{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:0 5px;
-    border-bottom:1px solid #ddd;
+    padding:0 ;
+    border:1px solid gray;
+    background-color: #165017;
 }
 
 .back{ width:20%;}
 
-.back > a{ font-size:18px; font-weight:bold; }
+.back > a{ 
+    font-size:18px; 
+    font-weight:bold;
+    color: #fdfdfd; }
 
 .title{ width:60%; text-align:center; }
 
-.title > h1{ color:#165017; font-size:38px; }
+.title > h1{ color:#fdfdfd; font-size:33px; }
 
-.logo{ width:20%; text-align:right; }
-
-.logo > img{ width:90px; }
-
+.logo{
+    width:20%;
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+}
+.logo > img{
+    width:90px;
+    display:block;
+}
 /* main */
 .score{ text-align:center; }
 
 .score > h3{
-
     font-size: 30px;
     margin-bottom: 8px;
     color:#165017
@@ -61,8 +73,9 @@ header{
     font-weight:bold;
 }
 .point{
-    font-size: 20px;
+    font-size: 55px;
     margin-bottom: 5px;
+    color:#e3880f;
 }
 
 .photo{
@@ -115,7 +128,6 @@ header{
     margin:20px 15px;
 }
 .top{
-   
     align-items:center;
     margin-bottom:15px;
 }

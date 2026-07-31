@@ -1,6 +1,6 @@
 
 /* 기본 설정 ===============================================*/
-*{box-sizing: border-box; padding: 0px; margin: 0px;}
+*{box-sizing: border-box; padding: 0px; margin: 0px auto;}
 a{ text-decoration: none; color: black; }
 li{ list-style-type: none; }
 *{width: 680px; font-family: 'SchoolSafetyManitto'; font-size: 22px;}
@@ -19,10 +19,11 @@ li{ list-style-type: none; }
     align-items: center;
     background-color: #165017;
     color: #fdfdfd;
+    position: relative;
 }
 .view_header > img {width: 70px;}
 .view_header > div >a {color: #fdfdfd;}
-
+.view_day{width: 100px;}
 
 /*==========================================*/
 /* 본문 구역 */
@@ -45,6 +46,11 @@ li{ list-style-type: none; }
     top: 10px;
 }
 .view_sco{margin: 20px;}
+.view_sco_num{
+    font-size:55px;
+    color:#e3880f;
+    font-weight:bold;
+}
 .view_img{ 
     width: 400px; height: 200px;
     margin: 0 auto;

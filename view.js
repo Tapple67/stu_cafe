@@ -20,6 +20,12 @@ let foodcode = url.get('foodCode') // URL foodCode 호출
 let foods = JSON.parse(localStorage.getItem('foods'))
 if(foods==null){foods=[];} // 빈배열일 경우 
 
+// 요일 선택시 값을 저장
+let select_value = 0
+function changeDay(select) {
+    select_value = select.value
+    view_print() // 값이 바뀌면 다시 조회
+}
 //조회
 view_print() // 페이지 넘어올시 바로 실행
 function view_print(){
@@ -27,7 +33,7 @@ function view_print(){
         let obj = foods[i] // 배열에서 인데스 순서별 객체
         if(obj.foodCode == foodcode){
             document.querySelector(".view_menu_name").innerHTML = obj.foodName
-            document.querySelector(".view_sco").innerHTML = `추천 점수를 보여드릴게요! + ${getScore(foodcode)}`// 추천도 점수 계산하는 식 
+            document.querySelector(".view_sco_num").innerHTML = ` <br /> ${getScore(foodcode)} 점`// 추천도 점수 계산하는 식 
             // url에 foodcode 넘겨 주기
             document.querySelector(".view_write").innerHTML =`<img src="학생식당_아이콘/07_리뷰쓰기.png" />
                                                                 <a href="write.html?foodCode=${obj.foodCode}">리뷰쓰기</a>`
@@ -45,7 +51,7 @@ function view_print(){
             // 상위 10% 기준 개수
             let top10Count = Math.ceil(sortedFoods.length * 0.1);
             // 현재 음식의 순위 찾기
-            let rank = sortedFoods.findIndex(f => f.foodCode == foodCode) + 1;
+            let rank = sortedFoods.findIndex(f => f.foodCode == foodcode) + 1;
             
             // 상위 10% 여부
             if(rank <= top10Count){
@@ -67,19 +73,48 @@ function getScore(foodCode){
         food = foods[i];
         break;}}
 
-    // 정규화 포함 식
-    // 판매량 점수 (30점)
-    let salesScore = (food.sales / maxSales) * 30;
-    // 별점 점수 (30점)
-    let ratingScore = (avgrating(foodCode)/5)  *30;
-    // 즐겨찾기 (현재는 모두 만점)
-    let favoriteScore = 30;
-    // 신메뉴 점수 (10%)
-    let newMenuScore =  0;  
+    // 정규화 포함 식 // 월(10 40 30 20) 화(20 30 30 20) 수~목(30 30 30 10 )
+    // 기초 비율 고정
+    let salesWeight = 30;
+    let ratingWeight = 30;
+    let favoriteWeight = 30;
+    let newMenuWeight = 10;
+
+    if(select_value == 1){ //월요일 비율
+        salesWeight = 10;
+        ratingWeight = 40;
+        favoriteWeight = 30;
+        newMenuWeight = 20;
+    }else if(select_value == 2){
+        salesWeight = 20;
+        ratingWeight = 30;
+        favoriteWeight = 30;
+        newMenuWeight = 20;
+    }else{
+        salesWeight = 30;
+        ratingWeight = 30;
+        favoriteWeight = 30;
+        newMenuWeight = 10;
+    }
+
+    // 판매량 점수 
+    let salesScore = (food.sales / maxSales) * salesWeight;
+    // 별점 점수 
+    let ratingScore = (avgrating(foodCode)/5)  * ratingWeight;
+    // 즐겨찾기 
+    let favoriteScore = favoriteWeight;
+    // 신메뉴 점수 
+    let newMenuScore =  0;
+    for(let i=0; i<=foods.length-1;i++){
+        if(foods[i].categoryCode == 4){
+            newMenuScore = newMenuWeight;
+            break; 
+        }
+    } 
 
     // 총점
     let totalScore = salesScore + ratingScore + favoriteScore + newMenuScore;
-    return totalScore.toFixed(1);
+    return parseInt(totalScore);
 }
 
 //평균 별점 계산
