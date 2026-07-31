@@ -184,7 +184,7 @@ function list(){
                     <div class="list-list">
                         <div class="list-img-pr">
                             <div class="list-img">
-                                <img src="/음식사진/${foods[i].image}" alt="음식사진">
+                                <img src="음식사진/${foods[i].image}" alt="음식사진">
                             </div>
                             <div class="list-price">${foodDetails[i].price.toLocaleString()}원</div>
                         </div>
@@ -310,7 +310,7 @@ function list(){
                 <div class="list-list">
                 <div class="list-img-pr">
                     <div class="list-img">
-                    <img src="/음식사진/${copyfoods[i].image}" alt="음식사진">
+                    <img src="음식사진/${copyfoods[i].image}" alt="음식사진">
                     </div>
                     <div class="list-price">${detail.price.toLocaleString()}원</div>
                 </div>
