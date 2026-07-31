@@ -1,7 +1,7 @@
 // list -> 선택한 메뉴 -> 조회 ( 사진 이름 추천도점수 별점 판매량순위)
 
 // 전역변수로 현재 URL 상 foodCode 확인
-let url = new URLSearchParams(location.search) // 현재 URL 
+const url = new URLSearchParams(location.search) // 현재 URL 
 let foodcode = url.get('foodCode') // URL foodCode 호출
 // 스토리지에 저장된 메뉴 목록들 확인
 let foods = JSON.parse(localStorage.getItem('foods'))
@@ -19,13 +19,18 @@ function view_print(){
     for(let i=0; i<=foods.length-1; i++){  // 추천점수 출력이랑 메뉴이름 출력
         let obj = foods[i] // 배열에서 인데스 순서별 객체
         if(obj.foodCode == foodcode){
+<<<<<<< HEAD
             document.querySelector(".view_menu_name").innerHTML = obj.foodName
             document.querySelector(".view_sco_num").innerHTML = ` <br /> ${getScore(foodcode)} 점`// 추천도 점수 계산하는 식 
+=======
+>>>>>>> e651f7248fe864cad667188208e51374623fff80
             // url에 foodcode 넘겨 주기
-            document.querySelector(".view_write").innerHTML =`<img src="학생식당_아이콘/07_리뷰쓰기.png" />
+            document.querySelector('.view_write').innerHTML =`<img src="학생식당_아이콘/07_리뷰쓰기.png" />
                                                                 <a href="write.html?foodCode=${obj.foodCode}">리뷰쓰기</a>`
             document.querySelector('.view_img > img').src = "음식사진/" + obj.image
-                                                              
+<<<<<<< HEAD
+
+>>>>>>> e651f7248fe864cad667188208e51374623fff80
             // 별점수에 따른 멘트 설정
             if(avgrating(foodcode) >= 3.2){
                 document.querySelector(".view_menu_reson1").innerHTML = "별점수가 높아요!" + avgrating(foodcode)
@@ -55,6 +60,7 @@ function getScore(foodCode){
         food = foods[i];
         break;}}
 
+<<<<<<< HEAD
     // 정규화 포함 식 // 월(10 40 30 20) 화(20 30 30 20) 수~목(30 30 30 10 )
     // 기초 비율 고정
     let salesWeight = 30; let ratingWeight = 30;
@@ -88,6 +94,17 @@ function getScore(foodCode){
         if(foods[i].categoryCode == 4){
             newMenuScore = newMenuWeight;
             break; }} 
+=======
+    // 정규화 포함 식
+    // 판매량 점수 (30점)
+    let salesScore = (food.sales / maxSales) * 30;
+    // 별점 점수 (30점)
+    let ratingScore = (avgrating(foodCode)/5)  *30;
+    // 즐겨찾기 (현재는 모두 만점)
+    let favoriteScore = 30;
+    // 신메뉴 점수 (10%)
+    let newMenuScore =  0;  
+>>>>>>> e651f7248fe864cad667188208e51374623fff80
 
     // 총점
     let totalScore = salesScore + ratingScore + favoriteScore + newMenuScore;
