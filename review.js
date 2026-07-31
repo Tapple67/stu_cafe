@@ -45,6 +45,10 @@ function reviewpage(){
 let rating = 0;
 
 function selectStar(number){
+
+    let reviewstar = document.querySelector('.reviewstar')
+    let starinfo = document.querySelector('.starinfo')
+
     rating = number;
     const starstar = document.querySelectorAll('.review-star-box > .review-button');
     for(i=0; i<starstar.length ;i++){
@@ -55,6 +59,18 @@ function selectStar(number){
         }
     }
     console.log(number)
+
+    let html1 = ''
+    let html2 = ''
+    html2 += `${rating}점`
+    for(i=0 ; i < rating; i++){
+        html1  += `★ `
+    }
+    reviewstar.innerHTML = html1
+    starinfo.innerHTML = html2
+    reviewstar.style.color = 'yellow';
+    // 별에 테두리 만드는 함수 
+    reviewstar.style.webkitTextStroke = '1px black';
 }
 
 

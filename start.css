@@ -1,4 +1,4 @@
-
+*{margin: 0 auto;}
 
 @font-face {
     font-family: 'SchoolSafetyManitto';
@@ -6,6 +6,8 @@
     font-weight: normal;
     font-display: swap;
 }
+
+
 html{
     width: 700px;
 }
@@ -19,6 +21,7 @@ body {
 }
 .start{
     width: 680px;
+    border: 1px solid black ;
 }
 /* =========== start 페이지 header 부분 ============= */
 #start-header{
@@ -40,6 +43,13 @@ body {
     width: 150px;
 }
 
+#up,#down{
+    
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
 /* ========== start 페이지 main 부분 ============ */
 #start-main{
     display: flex;
@@ -48,8 +58,8 @@ body {
 
 
 #start-mainimg1,#start-mainimg2,#start-mainimg3,#start-mainimg4{
-    width: 150px;
-    height: 150px;
+    width: 230px;
+    height: 230px;
 }
 
 
@@ -58,6 +68,9 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    
+    border-radius: 10%;
+    margin-bottom: 10px;
 }
 
 

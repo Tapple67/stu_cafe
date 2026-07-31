@@ -122,7 +122,7 @@ function 리뷰목록(){
                     <img src="학생식당_아이콘/07_리뷰쓰기.png">
                     <div class="text">
                         <h3>학생${ reviews[i].reviewCode }</h3>
-                        
+                        <div> ⭐ ${ reviews[i].rating } </div>
                         <p>${ reviews[i].content }</p>
                     </div>
                 </div>
