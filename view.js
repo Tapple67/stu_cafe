@@ -14,7 +14,7 @@ local storge 에 데이터가 있다는 가정
 // list -> 선택한 메뉴 -> 조회 ( 사진 이름 추천도점수 별점 판매량순위)
 
 // 전역변수로 현재 URL 상 foodCode 확인
-let url = new URLSearchParams(location.search) // 현재 URL 
+const url = new URLSearchParams(location.search) // 현재 URL 
 let foodcode = url.get('foodCode') // URL foodCode 호출
 // 스토리지에 저장된 메뉴 목록들 확인
 let foods = JSON.parse(localStorage.getItem('foods'))
@@ -26,12 +26,13 @@ function view_print(){
     for(let i=0; i<=foods.length-1; i++){  // 추천점수 출력이랑 메뉴이름 출력
         let obj = foods[i] // 배열에서 인데스 순서별 객체
         if(obj.foodCode == foodcode){
-            document.querySelector(".view_menu_name").innerHTML = obj.foodName
-            document.querySelector(".view_sco").innerHTML = "추천 점수를 보여드릴게요!" +getScore(foodcode)// 추천도 점수 계산하는 식 
+            document.querySelector('.view_menu_name').innerHTML = obj.foodName
+            document.querySelector('.view_sco').innerHTML = "추천 점수를 보여드릴게요!" +getScore(foodcode)// 추천도 점수 계산하는 식 
             // url에 foodcode 넘겨 주기
-            document.querySelector(".view_write").innerHTML =`<img src="학생식당_아이콘/07_리뷰쓰기.png" />
+            document.querySelector('.view_write').innerHTML =`<img src="학생식당_아이콘/07_리뷰쓰기.png" />
                                                                 <a href="write.html?foodCode=${obj.foodCode}">리뷰쓰기</a>`
-            document.querySelector('.view_img > img').src = "음식사진/" + obj.img
+            document.querySelector('.view_img > img').src = "음식사진/" + obj.image
+           
                              
                                                                 
             // 별점수에 따른 멘트 설정
@@ -71,7 +72,7 @@ function getScore(foodCode){
     // 판매량 점수 (30점)
     let salesScore = (food.sales / maxSales) * 30;
     // 별점 점수 (30점)
-    let ratingScore = (avgRating(foodCode)/5)  *30;
+    let ratingScore = (avgrating(foodCode)/5)  *30;
     // 즐겨찾기 (현재는 모두 만점)
     let favoriteScore = 30;
     // 신메뉴 점수 (10%)
