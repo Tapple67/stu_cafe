@@ -27,7 +27,7 @@ function view_print(){
         let obj = foods[i] // 배열에서 인데스 순서별 객체
         if(obj.foodCode == foodcode){
             document.querySelector(".view_menu_name").innerHTML = obj.foodName
-            document.querySelector(".view_sco").innerHTML = `추천 점수를 보여드릴게요! + ${getScore(foodcode)}`// 추천도 점수 계산하는 식 
+            document.querySelector(".view_sco_num").innerHTML = ` <br /> ${getScore(foodcode)} 점`// 추천도 점수 계산하는 식 
             // url에 foodcode 넘겨 주기
             document.querySelector(".view_write").innerHTML =`<img src="학생식당_아이콘/07_리뷰쓰기.png" />
                                                                 <a href="write.html?foodCode=${obj.foodCode}">리뷰쓰기</a>`
@@ -45,7 +45,7 @@ function view_print(){
             // 상위 10% 기준 개수
             let top10Count = Math.ceil(sortedFoods.length * 0.1);
             // 현재 음식의 순위 찾기
-            let rank = sortedFoods.findIndex(f => f.foodCode == foodCode) + 1;
+            let rank = sortedFoods.findIndex(f => f.foodCode == foodcode) + 1;
             
             // 상위 10% 여부
             if(rank <= top10Count){
@@ -84,7 +84,7 @@ function getScore(foodCode){
 
     // 총점
     let totalScore = salesScore + ratingScore + favoriteScore + newMenuScore;
-    return totalScore.toFixed(1);
+    return parseInt(totalScore);
 }
 
 //평균 별점 계산

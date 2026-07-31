@@ -45,6 +45,11 @@ li{ list-style-type: none; }
     top: 10px;
 }
 .view_sco{margin: 20px;}
+.view_sco_num{
+    font-size:55px;
+    color:#e3880f;
+    font-weight:bold;
+}
 .view_img{ 
     width: 400px; height: 200px;
     margin: 0 auto;
