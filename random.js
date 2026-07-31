@@ -132,4 +132,3 @@ function 리뷰목록(){
 리뷰목록();
 
 document.querySelector("#viewBtn").href = "view.html?foodCode=" + food.foodCode;
-document.querySelector("#reviewBtn").href = "review.html?foodCode=" + food.foodCode;
