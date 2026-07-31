@@ -1,6 +1,6 @@
 
 /* 기본 설정 ===============================================*/
-*{box-sizing: border-box; padding: 0px; margin: 0px;}
+*{box-sizing: border-box; padding: 0px; margin: 0px auto;}
 a{ text-decoration: none; color: black; }
 li{ list-style-type: none; }
 *{width: 680px; font-family: 'SchoolSafetyManitto'; font-size: 22px;}
