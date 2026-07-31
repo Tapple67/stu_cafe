@@ -233,7 +233,7 @@ function list(){
     for (let i = 0; i < links.length; i++) {
     if (links[i].dataset.code == categoryCode) {
         links[i].classList.add("active");
-    }
+        }
     }
 
 
@@ -266,6 +266,10 @@ function list(){
             let foodDetails= localStorage.getItem('foodDetails');
             if(foodDetails==null){foodDetails=[]}
             else{foodDetails = JSON.parse(foodDetails)}
+
+
+
+            let copyfoods = [...foods];
 
             copyfoods.sort(function(a, b) {
                 return b.sales - a.sales;
@@ -302,7 +306,7 @@ function list(){
             }
 
             html += `
-            <a href="view.html?foodCode=${foods[i].foodCode}">
+            <a href="view.html?foodCode=${copyfoods[i].foodCode}">
                 <div class="list-list">
                 <div class="list-img-pr">
                     <div class="list-img">
@@ -339,6 +343,9 @@ function list(){
             `;
         }
         }
+
+        list.innerHTML = html;
+
     }
 
      
