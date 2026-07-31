@@ -302,7 +302,7 @@ function list(){
             }
 
             html += `
-            <a href="view.html">
+            <a href="view.html?foodCode=${foods[i].foodCode}">
                 <div class="list-list">
                 <div class="list-img-pr">
                     <div class="list-img">
