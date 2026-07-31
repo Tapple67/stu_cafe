@@ -108,7 +108,6 @@ function 추천점수(){ // 최고 판매량 찾기
     // 출력
     document.querySelector("#score").innerHTML = parseInt(score); // 정수타입변환
 }
-
 // 함수 실행
 추천점수();
 
@@ -133,4 +132,3 @@ function 리뷰목록(){
 리뷰목록();
 
 document.querySelector("#writeBtn").href = "write.html?foodCode=" + food.foodCode;
-
