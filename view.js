@@ -32,7 +32,6 @@ function view_print(){
             document.querySelector('.view_write').innerHTML =`<img src="학생식당_아이콘/07_리뷰쓰기.png" />
                                                                 <a href="write.html?foodCode=${obj.foodCode}">리뷰쓰기</a>`
             document.querySelector('.view_img > img').src = "음식사진/" + obj.image
-           
                              
                                                                 
             // 별점수에 따른 멘트 설정
