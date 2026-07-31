@@ -11,10 +11,17 @@
 
     <div class="review-wrap">
 
-        <div class="review-header">
-            <button type="button" onclick="history.back()">←</button>
-            <h1>리뷰 작성</h1>
+        <div class="review_header">
+            <a onclick="history.back()"> <-이전화면</a>
+
+            <div class="write_menu_header">
+            리뷰작성-리뷰목록
+            </div>
+        
+            <img src="음식사진/학식당 로고.png" />
+        
         </div>
+
 
         <!-- 선택한 음식 정보가 들어가는 곳 -->
         <div class="review-food-info">
@@ -29,9 +36,11 @@
         <div class="review-form">
 
             <div class="review-form-title">
-                <h3>음식은 어떠셨나요?</h3>
-                <p>별점을 선택해주세요.</p>
+                <h3 class="starinfo">음식은 어떠셨나요?</h3>
+                <p class="reviewstar">별점을 선택해주세요.</p>
             </div>
+
+            
 
             <div class="review-star-box">
                 <button type="review-button" onclick="star = selectStar(1)">☆</button>
@@ -60,6 +69,25 @@
             </button>
 
         </div>
+
+
+        <div class="review-footer">
+                <a href="view.html" class="menu">
+                <img src="학생식당_아이콘/06_랭킹보기.png">
+                <p>메뉴 목록</p>
+            </a>
+
+            <a href="write.html" class="menu" id="writeBtn">
+            <img src="학생식당_아이콘/07_리뷰쓰기.png">
+            <p>리뷰쓰기</p>
+            </a>
+
+            <a href="random.html" class="menu">
+                <img src="학생식당_아이콘/랜덤추천.png">
+                <p>랜덤추천</p>
+            </a>
+        </div>
+
 
     </div>
 
