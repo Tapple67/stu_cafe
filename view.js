@@ -57,10 +57,8 @@ function getScore(foodCode){
 
     // 정규화 포함 식 // 월(10 40 30 20) 화(20 30 30 20) 수~목(30 30 30 10 )
     // 기초 비율 고정
-    let salesWeight = 30;
-    let ratingWeight = 30;
-    let favoriteWeight = 30;
-    let newMenuWeight = 10;
+    let salesWeight = 30; let ratingWeight = 30;
+    let favoriteWeight = 30; let newMenuWeight = 10;
 
     if(select_value == 1){ //월요일 비율
         salesWeight = 10;
