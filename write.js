@@ -37,7 +37,7 @@ function writepage(){
             html += `
             <div class="write-img-pr">
                         <div class="write-img">
-                            <a href="review.html?foodCode=${foods[i].foodCode}"><img src="/음식사진/${foods[i].image}" alt="음식사진"></a>
+                            <a href="review.html?foodCode=${foods[i].foodCode}"><img src="음식사진/${foods[i].image}" alt="음식사진"></a>
                         </div>
                         <div class="write-price">${foodDetails[i].price}원</div>
                     </div>
