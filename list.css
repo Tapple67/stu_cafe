@@ -1,4 +1,13 @@
+@font-face {
+    font-family: 'SchoolSafetyManitto';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2511-1@1.0/HakgyoansimManitoR.woff2') format('woff2');
+    font-weight: normal;
+    font-display: swap;
+}
 
+*{
+    font-family: 'SchoolSafetyManitto';
+}
 
 .list-header > div{
     display: flex;
