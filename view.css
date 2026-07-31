@@ -12,6 +12,7 @@ li{ list-style-type: none; }
 /*=======================================*/
 
 /* ====  헤더 구역 */
+.view_header >a{color: #fdfdfd;}
 .view_header{
     display: flex;
     justify-content: space-between;
@@ -21,7 +22,7 @@ li{ list-style-type: none; }
 }
 .view_header > img {width: 70px;}
 .view_header > div >a {color: #fdfdfd;}
-.view_menu_header{text-align: center;}
+
 
 /*==========================================*/
 /* 본문 구역 */
