@@ -19,10 +19,11 @@ li{ list-style-type: none; }
     align-items: center;
     background-color: #165017;
     color: #fdfdfd;
+    position: relative;
 }
 .view_header > img {width: 70px;}
 .view_header > div >a {color: #fdfdfd;}
-
+.view_day{width: 100px;}
 
 /*==========================================*/
 /* 본문 구역 */
