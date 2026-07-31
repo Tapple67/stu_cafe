@@ -59,18 +59,18 @@ function getScore(foodCode){
     // 기초 비율 고정
     let salesWeight = 30; let ratingWeight = 30;
     let favoriteWeight = 30; let newMenuWeight = 10;
-
+    
     if(select_value == 1){ //월요일 비율
         salesWeight = 10;
         ratingWeight = 40;
         favoriteWeight = 30;
         newMenuWeight = 20;
-    }else if(select_value == 2){
+    }else if(select_value == 2){ // 화요일 비율
         salesWeight = 20;
         ratingWeight = 30;
         favoriteWeight = 30;
         newMenuWeight = 20;
-    }else{
+    }else{ // 수요일 ~ 금요일 
         salesWeight = 30;
         ratingWeight = 30;
         favoriteWeight = 30;
