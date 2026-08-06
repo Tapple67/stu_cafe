@@ -2,93 +2,121 @@ import java.util.Scanner;
 
 public class Jtable {
     public static void main(String[] args) {
+        
+        Food food = new Food();
+        
+        Repository r1 = new Repository();
 
-        Food food = new Food(0, null, 0, null, 0)
-        for( ; ; ){
-            food.foodadd();
+        Scanner scan1 = new Scanner(System.in);
+        for(;;){
+
+            System.out.println("===================================");
+            System.out.println("1. 카테고리,  2. 음식  0. 종료 ");
+            System.out.println("====================================");
+            System.out.print("선택 >");
+
+            int aaa = scan1.nextInt();
+
+            System.out.println();
+            if( aaa ==1){
+                r1.menu();
+            }
+            else if(aaa==2){
+
+                food.ch();
+            }
+            else if( aaa == 0){
+
+                break;
+            }
         }
 
-
-
-        
     }
 }
 
-class Food{
-    
-        int foodCode;
-        String foodName;
-        int sale;
-        String image;
-        int categoryCode;
-        
-        public Food(int foodCode, String foodName, int sale, String image, int categoryCode) {
-            this.foodCode = foodCode;
-            this.foodName = foodName;
-            this.sale = sale;
-            this.image = image;
+
+class Categories{
+    int categoryCode;
+    String categoryName;
+
+    Categories(){};
+
+    public Categories(int categoryCode, String categoryName) {
             this.categoryCode = categoryCode;
-        }
-        Scanner scan = new Scanner( System.in );
-
-        Food[] foodList = new Food[100];
-
-        int ch(){
-        System.out.println("===============================");
-        System.out.println("1. 음식 추가  2. 음식 목록 보기");
-        System.out.println("===============================");
-        System.out.print("선택> ");
-        return scan.nextInt();
+            this.categoryName = categoryName;}
+   
+}
+class Food{
+    int foodCode;
+    String foodName;
+    int sale;
+    String image;
+    int categoryCode;
+    Food(){}
+    // foodList
+    public Food(int foodCode, String foodName, int sale, String image, int categoryCode) {
+        this.foodCode = foodCode;
+        this.foodName = foodName;
+        this.sale = sale;
+        this.image = image;
+        this.categoryCode = categoryCode;
     }
+    Scanner scan = new Scanner(System.in);
+    Food[] foodList = new Food[100];
+    // 등록 부분
+
+    void ch(){
+        System.out.println("===================================");
+        System.out.println("1. 음식 추가,  2. 음식 목록 보기 ");
+        System.out.println("====================================");
+        System.out.print("선택>\n");
+        int ch = scan.nextInt();
+        if( ch == 1){
+            foodadd();
+        }
+        else if( ch ==2 ){
+            System.out.println("\n==============목록==================\n");
+            foodPrint();
+        }}
 
     void foodadd(){
-        int menu = ch();
-        if( menu == 1){ 
-        System.out.print("음식코드 : ");
-        int code = scan.nextInt();
-        scan.nextLine();
-        System.out.print("음식이름 : ");
-        String name = scan.nextLine();
-    
-        System.out.print("판매량 : ");
-        int sale = scan.nextInt();
-        scan.nextLine();
-        System.out.print("사진 : ");
-        String image = scan.nextLine();
-        System.out.print("카테고리코드 : ");
-        int category = scan.nextInt();
-        Food foodwrite = new Food(code, name, sale, image, category);
-        for( int i = 0 ; i <= foodList.length -1 ; i++ ){
-            if(foodList[i] == null ){
-                foodList[i] = foodwrite;
-                System.out.println( "[안내] 음식 추가 성공");
+        System.out.print("음식 코드: "); int foodCode = scan.nextInt();
+        System.out.print("음식 이름: ");  String foodName = scan.next();
+        System.out.print("판매 가격: "); int sale = scan.nextInt();
+        System.out.print("음식 이미지: "); String image = scan.next();
+        System.out.print("카테고리 코드: "); int categoryCode = scan.nextInt();
+        // 받은 값을 객체로
+        Food foodWrite = new Food(foodCode, foodName, sale, image, categoryCode);
+        for(int i=0; i<=foodList.length-1; i++){
+            if(foodList[i] == null){
+                foodList[i] = foodWrite;
+                System.out.println("저장 성공");
                 break;
                 }
             }
-        }else if( menu == 2 ){
-            System.out.println("============= 음식 목록 =============");
-            foodPrint();
-        }
         
-        }
-        void foodPrint(){
-        for (int i = 0; i <= foodList.length -1; i++) {
-        if (foodList[i] != null) {
-            System.out.println("음식코드 : " + foodList[i].foodCode);
-            System.out.println("음식이름 : " + foodList[i].foodName);
-            System.out.println("판매량 : " + foodList[i].sale);
-            System.out.println("사진 : " + foodList[i].image);
-            System.out.println("카테고리코드 : " + foodList[i].categoryCode);
-            System.out.println("===============================");
+
+    }
+
+    void foodPrint(){
+        for(int i =0; i<=foodList.length-1;i++){
+            if(foodList[i] != null){
+                System.out.printf("음식코드: %d , 음식이름: %s, 판매가격: %d, 음식이미지: %s, 카테고리코드: %d\n",
+                    foodList[i].foodCode , foodList[i].foodName, foodList[i].sale, foodList[i].image, foodList[i].categoryCode);
+
             }
         }
 
     }
+
 }
 
+    
 
-// ============================================================================================================
 
+
+
+/* =============================================================================== */
 class Review{
     int reviewCode;
     String content; 
@@ -102,6 +130,10 @@ class Review{
         this.foodCode = foodCode;
     }
 }
+
+
+
+
 
 
 class FoodDetail {
@@ -122,3 +154,84 @@ class FoodDetail {
         this.carbs = carbs;         
     } // FoodDetail end
 } // class end
+
+class Repository{
+ 
+    Categories[] posts = new Categories[10];
+
+    boolean save(Categories categories){
+        for(int i = 0 ; i < posts.length; i++){
+            if(posts[i]== null){
+                posts[i] = categories;
+                return true;
+            }
+        }
+        return false;
+    } // save 함수 종료 
+
+    void menu(){
+    
+        Scanner scan = new Scanner(System.in);
+        
+        System.out.println("============ 카테고리 등록하기 ============ ");
+        System.out.println("1.카테고리등록 2.카테고리출력");
+        System.out.println("====================================== ");
+        System.out.print("선택 :");
+        int num = scan.nextInt();
+        if(num==1){
+            add();
+        }
+        else if(num==2){
+            Cprint(findAll());
+        }
+
+    }
+
+    void add(){
+        
+        Scanner scan = new Scanner(System.in);
+
+
+        
+        System.out.print("카테고리코드 : ");
+        int categoryCode = scan.nextInt();
+        System.out.print("카테고리이름 : ");
+        String categoryName = scan.next();
+
+        Categories c1 = new Categories(categoryCode,categoryName);
+
+        save(c1);
+    }// add 함수 종료
+
+
+
+    Categories[] findAll(){
+        return posts;
+    }
+
+    void Cprint(Categories[] posts){
+        for(Categories post:posts){
+            if(post != null){
+                System.out.printf("카테고리코드: %d 카테고리이름: %s\n",post.categoryCode,post.categoryName);
+            }
+        }
+    }
+
+
+}
+
+
+/*
+카테고리 등록 이랑 출력 이걸 물어봐
+
+1. 카테고리 등록 or 출력을 사용자에게 입력받음 (숫자로 1이랑 2)
+만약 1이면 
+-> 카테고리 코드 + 이름 등록 
+카테고리를 담을 클래스배열 10개만들고 null이면 등록 (처음부터 확인해서 )
+
+만약 2이면 
+카테고리 코드가 음식테이블에도 코드가 있잖아 그니까 이걸 넘겨주는건데?ㅇ
+일단은 카테고리 목록만 반환하고 출력하는걸로하자 반환을 해야해 그래야 
+음식쪽에 받아서 음식출력하니까 
+배열에 처음부터 null확인하고 null아니면 출력 
+*/
