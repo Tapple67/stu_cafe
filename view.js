@@ -1,7 +1,7 @@
 // list -> 선택한 메뉴 -> 조회 ( 사진 이름 추천도점수 별점 판매량순위)
 
 // 전역변수로 현재 URL 상 foodCode 확인
-const url = new URLSearchParams(location.search) // 현재 URL 
+let url = new URLSearchParams(location.search) // 현재 URL 
 let foodcode = url.get('foodCode') // URL foodCode 호출
 // 스토리지에 저장된 메뉴 목록들 확인
 let foods = JSON.parse(localStorage.getItem('foods'))
