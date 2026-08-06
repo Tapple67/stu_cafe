@@ -21,3 +21,12 @@ CREATE Table foods(
     categoryCode INT,
     constraint Foreign Key (categoryCode) REFERENCES categories(categoryCode)
 )
+
+CREATE Table reviews(
+    reviewCode int AUTO_INCREMENT PRIMARY KEY,
+    content CHAR(100),
+    rating int NOT NULL,
+    foodCode int, constraint FOREIGN KEY(foodCode) REFERENCES foods(foodCode)
+);
+
+
