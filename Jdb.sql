@@ -1,0 +1,6 @@
+DROP DATABASE IF EXISTS Jdb;
+
+CREATE DATABASE jdb;
+
+USE jdb;
+
