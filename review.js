@@ -43,12 +43,9 @@ function reviewpage(){
 
 // 별점 저장하는 전역 변수
 let rating = 0;
-
 function selectStar(number){
-
     let reviewstar = document.querySelector('.reviewstar')
     let starinfo = document.querySelector('.starinfo')
-
     rating = number;
     const starstar = document.querySelectorAll('.review-star-box > .review-button');
     for(i=0; i<starstar.length ;i++){
@@ -69,7 +66,6 @@ function selectStar(number){
     reviewstar.innerHTML = html1
     starinfo.innerHTML = html2
     reviewstar.style.color = 'yellow';
-    // 별에 테두리 만드는 함수 
     reviewstar.style.webkitTextStroke = '1px black';
 }
 
@@ -107,11 +103,9 @@ function reviewupload(){
     
     let reviewCode = reviews.length == 0 ? 1 : reviews.length + 1
     let obj = { reviewCode , content , rating , foodCode }
-    
     reviews.push(obj)
     localStorage.setItem('reviews' , JSON.stringify(reviews))
     alert('리뷰가 등록되었습니다.')
-
     location.href="write.html"
 
 }
