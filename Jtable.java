@@ -8,6 +8,22 @@ class Categories{
     int categoryCode;
     String categoryName;
 
+
+class Review{
+    int reviewCode;
+    String content; 
+    int rating; 
+    int foodCode;
+    
+    public Review(int reviewCode, String content, int rating, int foodCode) {
+        this.reviewCode = reviewCode;
+        this.content = content;
+        this.rating = rating;
+        this.foodCode = foodCode;
+    }
+    
+}
+
     
     public Categories(int categoryCode, String categoryName) {
         this.categoryCode = categoryCode;
