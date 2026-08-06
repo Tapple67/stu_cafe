@@ -66,7 +66,7 @@ class Food{
         // 받은 값을 객체로
         Food foodWrite = new Food(foodCode, foodName, sale, image, categoryCode);
         for(int i=0; i<=foodList.length-1; i++){
-            if(foodList[i] == null){
+            if(foodList[i] == null){ // [i] 체크
                 foodList[i] = foodWrite;
                 System.out.println("저장 성공");
                 break;
