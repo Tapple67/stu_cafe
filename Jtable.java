@@ -3,8 +3,10 @@ import java.util.Scanner;
 public class Jtable {
     public static void main(String[] args) {
         
+        Food food = new Food(0, null, 0, null, 0);
+        
         for(;;){
-            new Food().ch();
+            food.ch();
         }
 
 
@@ -37,8 +39,8 @@ class Food{
         this.image = image;
         this.categoryCode = categoryCode;
     }
-    Food[] foodList = new Food[100];
     Scanner scan = new Scanner(System.in);
+    Food[] foodList = new Food[100];
     // 등록 부분
 
     void ch(){
@@ -51,6 +53,7 @@ class Food{
             foodadd();
         }
         else if( ch ==2 ){
+            System.out.println("\n==============목록==================\n");
             foodPrint();
         }}
 
@@ -63,15 +66,24 @@ class Food{
         // 받은 값을 객체로
         Food foodWrite = new Food(foodCode, foodName, sale, image, categoryCode);
         for(int i=0; i<=foodList.length-1; i++){
-            if(foodList == null){
+            if(foodList[i] == null){
                 foodList[i] = foodWrite;
                 System.out.println("저장 성공");
                 break;
                 }
             }
+        
+
     }
 
     void foodPrint(){
+        for(int i =0; i<=foodList.length-1;i++){
+            if(foodList[i] != null){
+                System.out.printf("음식코드: %d , 음식이름: %s, 판매가격: %d, 음식이미지: %s, 카테고리코드: %d",
+                    foodList[i].foodCode , foodList[i].foodName, foodList[i].sale, foodList[i].image, foodList[i].categoryCode);
+
+            }
+        }
 
     }
 
