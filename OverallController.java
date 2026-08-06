@@ -61,6 +61,7 @@ class Post {
         this.writer = writer;
     }
 }
+<<<<<<< HEAD
 
 class Categories{
     int categoryCode;
@@ -88,3 +89,5 @@ class Food{
     }
 
 }
+=======
+>>>>>>> 8b913bc131acc04a2861d126f18466d47a07e829
