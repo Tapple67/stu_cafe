@@ -30,3 +30,11 @@ CREATE Table reviews(
 );
 
 
+CREATE TABLE FoodDetail (
+    foodcode INT PRIMARY KEY , price INT NOT NULL ,
+    calories INT NOT NULL , protein DOUBLE NOT NULL ,
+    fat DOUBLE NOT NULL , carbs INT NOT NULL ,
+    contraint FOREIGN KEY (foodcode) REFERENCES foods (foodCode)
+);
+
+
