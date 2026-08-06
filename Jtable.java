@@ -47,31 +47,32 @@ class Food{
         System.out.println("====================================");
         System.out.print("선택>\n");
         int ch = scan.nextInt();
-        foodadd(ch);
-    }
+        if( ch == 1){
+            foodadd();
+        }
+        else if( ch ==2 ){
+            foodPrint();
+        }}
 
-    void foodadd(int ch){
-        if(ch==1){
-            System.out.print("음식 코드: "); int foodCode = scan.nextInt();
-            System.out.print("음식 이름: ");  String foodName = scan.next();
-            System.out.print("판매 가격: "); int sale = scan.nextInt();
-            System.out.print("음식 이미지: "); String image = scan.next();
-            System.out.print("카테고리 코드: "); int categoryCode = scan.nextInt();
-            // 받은 값을 객체로
-            Food foodWrite = new Food(foodCode, foodName, sale, image, categoryCode);
-            for(int i=0; i<=foodList.length-1; i++){
-                if(foodList == null){
-                    foodList[i] = foodWrite;
-                    System.out.println("저장 성공");
-                    break;
+    void foodadd(){
+        System.out.print("음식 코드: "); int foodCode = scan.nextInt();
+        System.out.print("음식 이름: ");  String foodName = scan.next();
+        System.out.print("판매 가격: "); int sale = scan.nextInt();
+        System.out.print("음식 이미지: "); String image = scan.next();
+        System.out.print("카테고리 코드: "); int categoryCode = scan.nextInt();
+        // 받은 값을 객체로
+        Food foodWrite = new Food(foodCode, foodName, sale, image, categoryCode);
+        for(int i=0; i<=foodList.length-1; i++){
+            if(foodList == null){
+                foodList[i] = foodWrite;
+                System.out.println("저장 성공");
+                break;
                 }
             }
-            
-        }
-        
-        
+    }
 
-        
+    void foodPrint(){
+
     }
 
 }
